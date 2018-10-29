@@ -1,0 +1,165 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="KundenGeschenk.controller.View1">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Kundenstamm Daten">
+				<content>
+					<IconTabBar selectedKey="__xmlview0--filter0" id="bar0">
+						<items>
+							<IconTabFilter text="Daten" id="filter0" icon="sap-icon://account" iconColor="Positive" key="tab-0">
+								<content>
+									<Button xmlns="sap.m" text="Aktualisieren" id="button0" type="Transparent" activeIcon="sap-icon://refresh" icon="sap-icon://refresh" press="refreshUserData"/>
+									<FlexBox width="100%" id="box1">
+										<items>
+											<HBox width="100%" id="hbox1">
+												<items>
+													<Label text="Name" width="100%" id="label0" class="label-content"/>
+													<Text xmlns="sap.m" id="textName"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox2">
+												<items>
+													<Label text="Vorname" width="100%" id="label1" class="label-content"/>
+													<Text xmlns="sap.m" id="textFirstName"/>
+												</items>
+											</HBox>
+										</items>
+									</FlexBox>
+									<FlexBox width="100%" id="box0">
+										<items>
+											<HBox width="100%" id="hbox3">
+												<items>
+													<Label text="Adresse" width="100%" id="label2" class="label-content"/>
+													<Text xmlns="sap.m" id="textAdress"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox4">
+												<items>
+													<Label text="Ort" width="100%" class="label-content" id="label3"/>
+													<Text xmlns="sap.m" id="textPlace"/>
+												</items>
+											</HBox>
+										</items>
+									</FlexBox>
+									<FlexBox width="100%" id="box3">
+										<items>
+											<HBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" id="hbox5">
+												<items>
+													<Label text="PLZ" width="100%" id="label4" class="label-content"/>
+													<Text xmlns="sap.m" id="textZip"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox6">
+												<items>
+													<Label text="Land" width="100%" id="label5" class="label-content"/>
+													<Text xmlns="sap.m" id="textCountry"/>
+												</items>
+											</HBox>
+										</items>
+									</FlexBox>
+									<FlexBox width="100%" id="box4">
+										<items>
+											<HBox width="100%" id="hbox7">
+												<items>
+													<Label text="Geburtsdatum" width="100%" id="label6" class="label-content"/>
+													<Text xmlns="sap.m" id="textBday"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox8">
+												<items>
+													<Label text="ID" width="100%" id="label7" class="label-content"/>
+													<Text xmlns="sap.m" id="textId"/>
+												</items>
+											</HBox>
+										</items>
+									</FlexBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Geschenk" iconColor="Critical" id="filter1" icon="sap-icon://customer-order-entry" key="tab-1">
+								<content>
+									<Text xmlns="sap.m" text="Was genau möchte der Kunde mit seinem Geschenk machen?" id="text0" textAlign="Center" width="100%"/>
+									<FlexBox width="100%" id="box5">
+										<items>
+											<HBox width="100%" id="hbox9" justifyContent="Center">
+												<items>
+													<Button xmlns="sap.m" text="Abgelehnt" id="button1" type="Reject" icon="sap-icon://decline"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox10" justifyContent="Center">
+												<items>
+													<Button xmlns="sap.m" text="Angenommen" id="button2" type="Accept" icon="sap-icon://accept"/>
+												</items>
+											</HBox>
+											<HBox width="100%" id="hbox11" justifyContent="Center">
+												<items>
+													<Button xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" text="Abbruch" id="button3" type="Emphasized"/>
+												</items>
+											</HBox>
+										</items>
+									</FlexBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Bearbeiten" id="filter2" icon="sap-icon://settings" iconColor="Neutral" select="onChangeUserCall" key="tab-2"/>
+						</items>
+						<content>
+							<Button xmlns="sap.m" text="Aktualisieren" id="button5" icon="sap-icon://refresh" type="Transparent" press="refreshInputValues"/>
+							<Text xmlns="sap.m" text="Welche Daten vom Kunden möchten Sie bearbeiten?" id="text1" width="100%" textAlign="Center"/>
+							<FlexBox width="100%" id="box10">
+								<items>
+									<HBox width="100%" id="hbox12">
+										<items>
+											<Label text="Name" width="100%" id="label20" class="label-content"/>
+											<Input xmlns="sap.m" id="input0" placeholder="Name"/>
+										</items>
+									</HBox>
+									<HBox width="100%" id="hbox13">
+										<items>
+											<Label text="Vorname" width="100%" id="label21" class="label-content"/>
+											<Input xmlns="sap.m" id="input1" placeholder="Vorname"/>
+										</items>
+									</HBox>
+								</items>
+							</FlexBox>
+							<FlexBox width="100%" id="box11">
+								<items>
+									<HBox width="100%" id="hbox14">
+										<items>
+											<Label text="Adresse" width="100%" id="label22" class="label-content"/>
+											<Input xmlns="sap.m" id="input2" placeholder="Adresse"/>
+										</items>
+									</HBox>
+									<HBox width="100%" id="hbox15">
+										<items>
+											<Label text="Ort" width="100%" id="label23" class="label-content"/>
+											<Input xmlns="sap.m" id="input3" placeholder="Ort"/>
+										</items>
+									</HBox>
+								</items>
+							</FlexBox>
+							<FlexBox width="100%" id="box12">
+								<items>
+									<HBox width="100%" id="hbox16">
+										<items>
+											<Label text="PLZ" width="100%" id="label24" class="label-content"/>
+											<Input xmlns="sap.m" id="input4" placeholder="Postleitzahl"/>
+										</items>
+									</HBox>
+									<HBox width="100%" id="hbox17">
+										<items>
+											<Label text="Land" width="100%" id="label25" class="label-content"/>
+											<Input xmlns="sap.m" id="input5" placeholder="Land"/>
+										</items>
+									</HBox>
+								</items>
+							</FlexBox>
+							<HBox width="100%" id="hbox18" justifyContent="End">
+								<items>
+									<Button xmlns="sap.m" text="Änderung speichern" id="button4" icon="sap-icon://save" type="Ghost" press="changeUserData"/>
+								</items>
+							</HBox>
+						</content>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

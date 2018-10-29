@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>KundenGeschenk</title>
+		<!-- call app enablement start -->
+		<script type="text/javascript" src="./libs/appEnablement/AppEnablementConnector.js"></script>
+		<script type="text/javascript" src="./libs/appEnablement/api/Common.js"></script>
+		<script type="text/javascript" src="./libs/appEnablement/api/Masterdata.js"></script>
+		<script type="text/javascript" src="./libs/appEnablement/api/ExternalMasterdata.js"></script>
+		<script type="text/javascript" src="./libs/appEnablement/api/Pos.js"></script>
+		<script type="text/javascript">
+			var oAppEnablementCommonInstance = new comGkSoftwareGkrAppEnablementApi.Common();
+			var oAppEnablementExternalMasterdataInstance = new comGkSoftwareGkrAppEnablementApi.ExternalMasterdata(); 
+			var oAppEnablementMasterdataInstance = new comGkSoftwareGkrAppEnablementApi.Masterdata(); 
+			var oAppEnablementPosInstance = new comGkSoftwareGkrAppEnablementApi.Pos(); 
+			function good(id, val) { 
+				val = JSON.stringify(val); 
+				setHTML(id, "<div style='width:320px; color: green; font-weight: bold; word-wrap: break-word;'>OK (" + val + ")</div>"); 
+			} 
+			function fail(ID, err) { 
+				setHTML(id, "<div style='color: orange; font-weight: bold;'>ERR (" + err + ")</div>"); 
+			} 
+			function setHTML(id, html) { 
+				if (document.getElementById(id) != null) { 
+					document.getElementById(id).innerHTML = html;
+				}
+			} 
+			// getSessionContext
+			function getSessionContext() { 
+				oAppEnablementCommonInstance.getSessionContext('currentSessionContextFound', 'noCurrentSessionContext'); 
+			} 
+			function currentSessionContextFound(context) { 
+				this.context = context; 
+				good('statusGetSessionContext', context);
+			} 
+			function noCurrentSessionContext(err) { 
+				fail('statusGetSessionContext', 'FAIL(' + err + ')');
+			}
+		</script>
+		<!-- call app enablement end -->
+		<script id="sap-ui-bootstrap"
+			src="../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"KundenGeschenk": ""}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "KundenGeschenk"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>
